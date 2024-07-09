@@ -15,4 +15,11 @@ public class PrefabPlacer : MonoBehaviour
     {
         
     }
+
+    //x based on partiality
+    //make the y random depending on the x axis for now
+    int xPosCalculator(int ranking)
+    {
+        return 0;
+    }
 }
