@@ -6,6 +6,7 @@ public class CSVReader : MonoBehaviour
 {
     public static string fileName = "Assets/main.csv"; 
     private static string[,] data;
+    public Topic[] topics;
 
     void Start()
     {
@@ -60,5 +61,10 @@ public class CSVReader : MonoBehaviour
             }
             Debug.Log(row);
         }
+    }
+
+    void CreateTopics()
+    {
+
     }
 }
