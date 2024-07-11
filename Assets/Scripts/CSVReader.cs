@@ -4,16 +4,17 @@ using System.Collections.Generic;
 
 public class CSVReader : MonoBehaviour
 {
-    public string fileName = "Assets/main.csv"; // Set your CSV file name here
-    private string[,] data;
+    public static string fileName = "Assets/main.csv"; 
+    private static string[,] data;
 
     void Start()
     {
+        //make sure that this is delayed later
         ReadCSV();
         PrintData();
     }
 
-    void ReadCSV()
+    public static void ReadCSV()
     {
         string filePath = Path.Combine(Application.dataPath, fileName);
 
@@ -22,13 +23,10 @@ public class CSVReader : MonoBehaviour
             string[] lines = File.ReadAllLines(filePath);
             if (lines.Length > 0)
             {
-                // Get the number of rows and columns
                 int numRows = lines.Length;
                 int numCols = lines[0].Split(',').Length;
-
-                // Initialize the 2D array
+                
                 data = new string[numRows, numCols];
-
                 for (int i = 0; i < numRows; i++)
                 {
                     string[] values = lines[i].Split(',');
@@ -50,7 +48,8 @@ public class CSVReader : MonoBehaviour
         }
     }
 
-    void PrintData()
+    //take the data and spit it into the unity console.
+    static void PrintData()
     {
         for (int i = 0; i < data.GetLength(0); i++)
         {

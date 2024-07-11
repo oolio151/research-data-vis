@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PrefabPlacer : MonoBehaviour
 {
+
+    string[,] data;
+    GameObject dotPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +21,10 @@ public class PrefabPlacer : MonoBehaviour
 
     //x based on partiality
     //make the y random depending on the x axis for now
-    int xPosCalculator(int ranking)
+
+    //ranking assumes a scale from -1.0 to 1.0
+    static int XPosCalculator(int ranking)
     {
-        return 0;
+        return 400 + (ranking * 300);
     }
 }
