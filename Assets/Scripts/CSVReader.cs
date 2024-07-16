@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class CSVReader : MonoBehaviour
 {
-    public static string fileName = "Assets/main.csv"; 
+    public static string fileName = "f1data.csv"; 
     private static string[,] data;
     public Topic[] topics;
 
@@ -12,10 +12,10 @@ public class CSVReader : MonoBehaviour
     {
         //make sure that this is delayed later
         ReadCSV();
-        PrintData();
+        //PrintData();
     }
 
-    public static void ReadCSV()
+    public static string[,] ReadCSV()
     {
         string filePath = Path.Combine(Application.dataPath, fileName);
 
@@ -37,6 +37,7 @@ public class CSVReader : MonoBehaviour
                         data[i, j] = values[j];
                     }
                 }
+                return data;
             }
             else
             {
@@ -47,6 +48,7 @@ public class CSVReader : MonoBehaviour
         {
             Debug.LogError("CSV file not found.");
         }
+        return new string[0,0];
     }
 
     //take the data and spit it into the unity console.
@@ -59,7 +61,7 @@ public class CSVReader : MonoBehaviour
             {
                 row += data[i, j] + " ";
             }
-            Debug.Log(row);
+
         }
     }
 

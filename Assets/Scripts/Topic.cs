@@ -6,9 +6,9 @@ public class Topic
 {
     public string name;
     public string description;
-    public int rating;
+    public float rating;
 
-    public Topic(string name, string description, int rating)
+    public Topic(string name, string description, float rating)
     {
         this.name = name;
         this.description = description;
