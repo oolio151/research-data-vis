@@ -7,6 +7,7 @@ public class PrefabPlacer : MonoBehaviour
 
     string[,] data;
     public GameObject dotPrefab;
+    public Transform buttonParent;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,4 +31,5 @@ public class PrefabPlacer : MonoBehaviour
         Debug.Log(400 + (ranking * 300));
         return Mathf.RoundToInt((ranking * 300));
     }
+
 }
